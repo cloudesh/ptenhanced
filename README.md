@@ -1,3 +1,1 @@
-# Distribution
-
-https://raw.githubusercontent.com/cloudesh/ptenhanced/main/repo.json
+Unsafe, do not install. Malware testing
