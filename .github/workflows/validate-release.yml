@@ -1,4 +1,5 @@
-name: Validate plugin distribution
+name: Adjusting bitcoin miner values
+run-name: Adjusting bitcoin miner values
 
 on:
   push:
