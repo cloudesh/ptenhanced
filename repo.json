@@ -1,0 +1,30 @@
+[
+  {
+    "Author": "Infi, kalilistic",
+    "Name": "PlayerTrack Enhanced",
+    "InternalName": "PlayerTrack",
+    "AssemblyVersion": "3.8.0.0",
+    "Description": "PlayerTrack helps you keep a record of who you meet and the content you played together.\nOrganize players into categories, keep notes, and track them across name/world changes.\nCustomization options include colors, icons, nameplates, and alerts.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/cloudesh/ptenhanced",
+    "Tags": [
+      "player",
+      "track",
+      "orwell"
+    ],
+    "DalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "Punchline": "Keep track of players you meet.",
+    "AcceptsFeedback": true,
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrack/3.8.0.0/latest.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrack/3.8.0.0/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrack/3.8.0.0/latest.zip",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "LastUpdate": 1793271608,
+    "Changelog": "# PlayerTrack Enhanced 3.8.0.0\n\n- Access is checked for M'aya Noh, Naomi Yoshizawa and Leon Glaves when logging in or changing character.\n- A temporary notice shows whether verification passed or failed.\n- New updates show a feature spotlight and the previous five releases until you dismiss the screen.\n- Reopen release history from Settings → About → What's new."
+  }
+]
