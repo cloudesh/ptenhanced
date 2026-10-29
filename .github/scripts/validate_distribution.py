@@ -22,14 +22,15 @@ def version_key(value: str) -> tuple[int, ...]:
     return parts
 
 
-def release_info(root: Path, repository: str, branch: str) -> tuple[dict, Path]:
+def release_info(root: Path, repository: str, branch: str, legacy: bool = False) -> tuple[dict, Path]:
     data = json.loads((root / "repo.json").read_text(encoding="utf-8-sig"))
     require(isinstance(data, list) and len(data) == 1, "repo.json must be an array containing one plugin")
     entry = data[0]
-    require(entry.get("InternalName") == "PlayerTrack", "Unexpected plugin identity")
+    identity = entry.get("InternalName")
+    require(identity == "PlayerTrackEnhanced" or (legacy and identity == "PlayerTrack"), "Unexpected plugin identity")
     version = entry.get("AssemblyVersion")
     version_key(version)
-    relative = f"plugins/PlayerTrack/{version}/latest.zip"
+    relative = f"plugins/{identity}/{version}/latest.zip"
     expected = f"https://raw.githubusercontent.com/{repository}/{branch}/{relative}"
     for key in ("DownloadLinkInstall", "DownloadLinkUpdate", "DownloadLinkTesting"):
         require(entry.get(key) == expected, f"{key} must use the versioned download in this repository")
@@ -67,13 +68,13 @@ def validate(root: Path, repository: str, branch: str = "main", previous_root: P
                     "Unsafe ZIP entry path")
             require(not name.lower().endswith((".db", ".sqlite", ".sqlite3", ".db-wal", ".db-shm")), "User database in distribution")
         require(archive.testzip() is None, "Runtime ZIP failed its CRC check")
-        for required in ("PlayerTrack.dll", "PlayerTrack.json", "LICENSE", "THIRD_PARTY_NOTICES.md", "LICENSES/PeepingTom-EUPL-1.2.txt"):
+        for required in ("PlayerTrackEnhanced.dll", "PlayerTrackEnhanced.json", "LICENSE", "THIRD_PARTY_NOTICES.md", "LICENSES/PeepingTom-EUPL-1.2.txt"):
             require(required in names, f"Missing runtime file: {required}")
-        manifest = json.loads(archive.read("PlayerTrack.json"))
+        manifest = json.loads(archive.read("PlayerTrackEnhanced.json"))
         for key in ("InternalName", "AssemblyVersion", "DalamudApiLevel"):
             require(manifest.get(key) == entry.get(key), f"Embedded manifest disagrees with repo.json: {key}")
     if previous_root is not None and (previous_root / "repo.json").is_file():
-        previous, _ = release_info(previous_root, repository, branch)
+        previous, _ = release_info(previous_root, repository, branch, legacy=True)
         require(version_key(entry["AssemblyVersion"]) >= version_key(previous["AssemblyVersion"]), "Version downgrade rejected")
         existing = previous_root / path.relative_to(root)
         if existing.exists():

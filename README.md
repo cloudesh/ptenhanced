@@ -1,1 +1,3 @@
-ur pc may burn if u download this
+# Distribution
+
+https://raw.githubusercontent.com/cloudesh/ptenhanced/main/repo.json
