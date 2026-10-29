@@ -3,7 +3,7 @@
     "Author": "Infi, kalilistic",
     "Name": "Player Track Enhanced",
     "InternalName": "PlayerTrackEnhanced",
-    "AssemblyVersion": "3.9.1.0",
+    "AssemblyVersion": "3.9.2.0",
     "Description": "PlayerTrack helps you keep a record of who you meet and the content you played together.\nOrganize players into categories, keep notes, and track them across name/world changes.\nCustomization options include colors, icons, nameplates, and alerts.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/cloudesh/ptenhanced",
@@ -19,11 +19,11 @@
     "LoadPriority": 0,
     "Punchline": "Keep track of players you meet.",
     "AcceptsFeedback": true,
-    "DownloadLinkInstall": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.1.0/latest.zip",
-    "DownloadLinkUpdate": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.1.0/latest.zip",
-    "DownloadLinkTesting": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.1.0/latest.zip",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.2.0/latest.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.2.0/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/cloudesh/ptenhanced/main/plugins/PlayerTrackEnhanced/3.9.2.0/latest.zip",
     "IsHide": false,
     "IsTestingExclusive": false,
-    "LastUpdate": 1793284639
+    "LastUpdate": 1793285549
   }
 ]
